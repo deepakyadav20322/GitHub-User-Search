@@ -9,6 +9,7 @@ html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+ 
     font-family: 'Inter', sans-serif;
 }
 .boxShadow-first{
@@ -82,19 +83,8 @@ color: white;
     margin: auto;
 
 }
-.tab-light{
- color:#fff;
- background: #0079FF;
-}
-.tab-dark{
 
-}
-.tab-active{
 
-}
-.tab-tabInactive{
-
-}
 
 @media screen and (max-width:520px) {
       .themeValue{

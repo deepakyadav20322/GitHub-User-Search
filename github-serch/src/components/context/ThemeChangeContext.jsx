@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 
  const ThemeChangeContext = ({children})=>{
 
-    const [theme,setTheme]  =useState('dark');
+    const [theme,setTheme]  =useState('light');
 
     return(
 

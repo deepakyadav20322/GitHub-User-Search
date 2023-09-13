@@ -1,14 +1,15 @@
 import React,{useContext} from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeChangeContext";
+import { useLocation } from "react-router-dom";
 
 const UsersContainer = ({ users }) => {
-     
+     const {pathname} = useLocation()
   const {theme,setTheme}  =useContext(ThemeContext);
 
   return (
     <>
-    {users && users.length>1 &&<p className="randomProfile first-letter:text-[25px]  pl-10 lg:pl-3">:- Some random profiles</p>}
+    {users && pathname=="" && users.length>1 &&<p className="randomProfile first-letter:text-[25px]  pl-10 lg:pl-3">:- Some random profiles</p>}
     <div className="flex gap-5 flex-wrap justify-center  py-5">
        
       {users &&
@@ -24,7 +25,7 @@ const UsersContainer = ({ users }) => {
                 className="w-24 mb-4 border-4 border-[#0079FF] rounded-full"
               />
 
-              <h1 className="text-xl">{user?.login}</h1>
+              <h1 className="text-xl text-center overflow-hidden text-ellipsis w-[180px]">{user?.login}</h1>
               <h1 className="text-xs text-teal-400">{user?.name}</h1>
               <Link to={`/${user?.login}`}>
                 <span

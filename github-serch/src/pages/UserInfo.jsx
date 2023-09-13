@@ -19,7 +19,7 @@ const UserInfo = () => {
   const [loading, setLoading] = useState(false);
   const baseURL = "https://api.github.com/users";
   const { pathname } = useLocation();
-  const navigate = useNavigate();
+
   const { theme } = useContext(ThemeContext);
 
   const userInfo = async () => {
@@ -54,7 +54,7 @@ const UserInfo = () => {
   }, [pathname, urls]);
   return (
     <div>
-      <Link className={`px-4 py-2  rounded m-3 ${theme=='dark'?'text-white bg-[#1079FF] ':'text-[#1079FF] bg-[#fff] border-[1px] border-gray-200'}`} to={'/'}>Next Search</Link>
+      
       <div>
         {user &&
           user?.map((info, i) => (
@@ -70,11 +70,11 @@ const UserInfo = () => {
                   className="w-[116px] h-[116px] rounded-full  border-4 border-[#1079FF] md:mx-0 mx-auto"
                 />
                 <div>
-                  <h1 className="font-bold text-[27px] mt-2">{info.login}</h1>
+                  <h1 className="font-[600] text-[25px] mt-2">{info.login}</h1>
                   <Link
                     to={info.html_url}
                     target="_blanck"
-                    className="font-bold "
+                    className="font-[500] "
                   >
                     {" "}
                     <span className="text-[#1079FF]">@{info.login}</span>
@@ -87,10 +87,13 @@ const UserInfo = () => {
                     </span>
                   </p>
                 </div>
+                <div className="flex justify-end w-full">
+                <Link className={`px-4 py-2 h-[40px] rounded m-3 ${theme=='dark'?'text-white bg-[#1079FF] ':'text-[#fff] bg-[#1079FF] border-[1px] border-gray-200'} hover:bg-[#1078ffb8]`} to={'/'}>Another_Search</Link>
+                </div>
               </div>
               <div className="flex flex-row justify-center items-center my-5  transition-all duration-[0ms]">
                 <div
-                  className={`flex  flex-row justify-evenly w-[550px]  p-2 rounded-[1rem] ${
+                  className={`flex font-bold  flex-row justify-evenly w-[550px]  p-2 rounded-[1rem] ${
                     theme == "dark" ? "bg-[#141D2F]" : "bg-[#F6F8FF]"
                   } `}
                 >
@@ -133,7 +136,7 @@ const UserInfo = () => {
                       <FaXTwitter
                         color={`${theme == "light" ? "#4b6a9b" : "#fff"}`}
                         className="inline mr-4"
-                        size={20}
+                        size={17}
                       />
                       {info.twitter_username ? (
                         info.twitter_username
@@ -166,7 +169,7 @@ const UserInfo = () => {
                       <BsFillBuildingsFill
                         color={`${theme == "light" ? "#4b6a9b" : "#fff"}`}
                         className={`inline mr-4`}
-                        size={20}
+                        size={17}
                       />
                       {info.company ? (
                         info.company
@@ -183,7 +186,7 @@ const UserInfo = () => {
       <Tabs urls={urls} seturls={seturls} />
 
       <div>
-        {loading && <Loading />}
+        {loading?<Loading />:
         <div>
           {urls === "repos" && (
             <div className="grid md:grid-cols-2 grid-cols-1 gap-7 w-10/12 mx-auto">
@@ -197,6 +200,7 @@ const UserInfo = () => {
           )}
           {urls === "followers" && <UserContainer users={urlData} />}
         </div>
+        }
       </div>
     </div>
   );
