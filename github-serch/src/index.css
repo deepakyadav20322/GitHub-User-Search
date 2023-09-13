@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Stylish&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 
 html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
-
+.boxShadow-first{
+  box-shadow:rgba(70, 96, 187, 0.2) 0px 16px 30px -10px;
+}
 .dark-input-box{
 background:#1E2A47;
 color:white;
@@ -51,7 +56,7 @@ font-size: 1.1rem;
 }
 
 .card-dark {
-background: #000;
+background: #1E2A47;
 color: white;
 }
 .card-dark a span{
@@ -75,6 +80,19 @@ color: white;
     font-size: 17px;
     font-weight: 500;
     margin: auto;
+
+}
+.tab-light{
+ color:#fff;
+ background: #0079FF;
+}
+.tab-dark{
+
+}
+.tab-active{
+
+}
+.tab-tabInactive{
 
 }
 
