@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import { FaLocationDot } from "react-icons/fa6";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiLink } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsFillBuildingsFill } from "react-icons/bs";
@@ -57,6 +58,7 @@ const UserInfo = () => {
     <div>
       
       <div>
+       <Link to={'/'} className=" cursor-pointer backArrow w-[30px] h-[30px] ml-5 mb-1 flex flex-row justify-center items-center rounded-full bg-[#1079ff]"><AiOutlineArrowLeft className="moveIcon" color="white" size={20} /></Link>
         {user &&
           user?.map((info, i) => (
             <div
@@ -89,7 +91,7 @@ const UserInfo = () => {
                   </p>
                 </div>
                 <div className=" justify-end w-full flex">
-                <Link className={`px-4 py-2 h-[40px] rounded m-3 ${theme=='dark'?'text-white bg-[#1079FF] ':'text-[#fff] bg-[#1079FF] border-[1px] border-gray-200'} hover:bg-[#1078ffb8]`} to={'/'}> <span className="hidden sm:block">Another_Search</span><span className="block sm:hidden">Back</span> </Link>
+                <Link className={` backbtn px-4 py-2 h-[40px] rounded m-3 ${theme=='dark'?'text-white bg-[#1079FF] ':'text-[#fff] bg-[#1079FF] border-[1px] border-gray-200'} hover:bg-[#1078ffb8]`} to={'/'}><span className=" block">Back</span> </Link>
                 </div>
               </div>
               <div className="flex flex-row justify-center items-center my-5  transition-all duration-[0ms]">
