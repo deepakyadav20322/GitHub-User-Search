@@ -60,35 +60,35 @@ const UserInfo = () => {
           user?.map((info, i) => (
             <div
               key={i}
-              className={`flex justify-cenetr pt-4 pb-8 px-8 flex-col  transition-all duration-[10ms] border-[1px] w-[730px] m-auto ${
+              className={`flex justify-cenetr mx-2 sm:m-auto pt-4 pb-8 px-8 flex-col  transition-all duration-[10ms] border-[1px] md:w-[730px] sm:w-[500px]  ${
                 theme == "dark" ? "bg-[#1E2A47]" : "bg-[#FEFEFE]"
               } rounded-[1.2rem] boxShadow-first`}
             >
-              <div className="flex flex-row gap-5 mt-6">
+              <div className="flex flex-row gap-1 sm:gap-5 mt-6">
                 <img
                   src={info.avatar_url}
                   className="w-[116px] h-[116px] rounded-full  border-4 border-[#1079FF] md:mx-0 mx-auto"
                 />
                 <div>
-                  <h1 className="font-[600] text-[25px] mt-2">{info.login}</h1>
+                  <h1 className="sm:font-[600] font-[500] text-[21px] sm:text-[25px] mt-2">{info.login}</h1>
                   <Link
                     to={info.html_url}
                     target="_blanck"
                     className="font-[500] "
                   >
-                    {" "}
+                    
                     <span className="text-[#1079FF]">@{info.login}</span>
                   </Link>
                   <p className="">
-                    {" "}
-                    Joind:{" "}
-                    <span className="">
+                   
+                    Joind:&nbsp;
+                    <span className="inline">
                       {new Date(info.created_at).toLocaleDateString()}
                     </span>
                   </p>
                 </div>
-                <div className="flex justify-end w-full">
-                <Link className={`px-4 py-2 h-[40px] rounded m-3 ${theme=='dark'?'text-white bg-[#1079FF] ':'text-[#fff] bg-[#1079FF] border-[1px] border-gray-200'} hover:bg-[#1078ffb8]`} to={'/'}>Another_Search</Link>
+                <div className=" justify-end w-full flex">
+                <Link className={`px-4 py-2 h-[40px] rounded m-3 ${theme=='dark'?'text-white bg-[#1079FF] ':'text-[#fff] bg-[#1079FF] border-[1px] border-gray-200'} hover:bg-[#1078ffb8]`} to={'/'}> <span className="hidden sm:block">Another_Search</span><span className="block sm:hidden">Back</span> </Link>
                 </div>
               </div>
               <div className="flex flex-row justify-center items-center my-5  transition-all duration-[0ms]">
@@ -100,20 +100,20 @@ const UserInfo = () => {
                   <p className="text-[1rem] p-[5px]">
                     {" "}
                     <span className="font-bold">Repos:</span>{" "}
-                    <p className="text-[#1079FF]">{info.public_repos}</p>
+                    <span className="text-[#1079FF] block">{info.public_repos}</span>
                   </p>
                   <p className="text-[1rem] p-[5px]">
                     <span className="font-bold">Follower:</span>{" "}
-                    <p className="text-[#1079FF]">{info.followers}</p>
+                    <span className="text-[#1079FF] block">{info.followers}</span>
                   </p>
                   <p className="text-[1rem] p-[5px]">
                     {" "}
                     <span className="font-bold">Following:</span>{" "}
-                    <p className="text-[#1079FF]">{info.following}</p>
+                    <span className="text-[#1079FF] block">{info.following}</span>
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row justify-around ">
+              <div className="flex leading-[1.7rem] sm:leading-normal flex-col sm:flex-row justify-around ">
                 <div
                   className={`${
                     theme == "dark" ? "text-white" : "#4B6A9B"

@@ -12,7 +12,7 @@ const {theme,setTheme}  =useContext(ThemeContext);
   return (
    
     <div className={`min-h-screen transition-all duration-100 ${theme=="dark"?'bg-[#141D2F] text-[#fff]':'bg-[#F6F8FF] text-[#000]'}`}>
-      <div className='container'>
+      <div className='container-fluid'>
       <Logo/>
         <Routes>
     <Route path="/" element={<UserSerchBox/>}></Route>

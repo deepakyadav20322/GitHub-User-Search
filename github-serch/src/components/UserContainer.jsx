@@ -9,7 +9,7 @@ const UsersContainer = ({ users }) => {
 
   return (
     <>
-    {users && pathname=="" && users.length>1 &&<p className="randomProfile first-letter:text-[25px]  pl-10 lg:pl-3">:- Some random profiles</p>}
+    {users && pathname=="/" && users.length>1 &&<p className="randomProfile first-letter:text-[25px]  pl-10 lg:pl-3">:- Some random profiles</p>}
     <div className="flex gap-5 flex-wrap justify-center  py-5">
        
       {users &&

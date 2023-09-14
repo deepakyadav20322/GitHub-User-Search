@@ -14,7 +14,7 @@ const UserSerchBox = () => {
     const {pathname}  = useLocation();
     const [users,setUsers]= useState([]);
     const [loading,setLoading] = useState(false);
-    const {theme,setTheme}  =useContext(ThemeContext);
+    const {theme}  =useContext(ThemeContext);
     const containerClassName = theme === 'dark'
            ? 'bg-[#1E2A47] text-white '
            : 'bg-[#FEFEFE] text-black ';
@@ -79,6 +79,7 @@ const UserSerchBox = () => {
        <button onClick={FindUser} className='border-2 py-[0.6rem] px-6 rounded-[1rem] text-white font-bold text-[1.1rem] bg-[#0079FF]' >Search</button>
        </div>
        </div>
+       
        <div>
           {loading?<Loading/>: <UserContainer users={users}/>}
        </div>
