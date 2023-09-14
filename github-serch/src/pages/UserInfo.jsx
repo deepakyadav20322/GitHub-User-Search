@@ -11,6 +11,7 @@ import Loading from "../components/Loading";
 import Repo from "../components/Repo";
 import Events from "../components/Events";
 import UserContainer from "../components/UserContainer";
+import OwnActivity from "../components/OwnActivity";
 
 const UserInfo = () => {
   const [user, setUser] = useState([]);
@@ -199,6 +200,11 @@ const UserInfo = () => {
             </div>
           )}
           {urls === "followers" && <UserContainer users={urlData} />}
+          {urls === "events" && (
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-7 w-10/12 mx-auto ">
+              {urlData && <OwnActivity data={urlData} />}
+            </div>
+          )}
         </div>
         }
       </div>

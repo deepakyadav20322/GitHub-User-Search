@@ -17,7 +17,7 @@ const Tabs = ({ urls, seturls }) => {
         onClick={()=>seturls("received_events")}
         className={`${urls == "received_events" ?"border-[3px] rounded p-1 border-[#0079FF]":""} ${theme=='dark'?'text-[#fff]':'text-[#000]'} pb-1 mb-2`}
       >
-        Activity
+        Recived Events
       </button>
 
       <button
@@ -25,6 +25,12 @@ const Tabs = ({ urls, seturls }) => {
         className={`${urls == "followers" ? "border-[3px] p-1 rounded border-[#0079FF]":""} ${theme=='dark'?'text-[#fff]':'text-[#000]'} pb-1 mb-2`}
       >
         Follwers
+      </button>
+      <button
+        onClick={()=>seturls("events")}
+        className={`${urls == "events" ? "border-[3px] py-1 px-2 rounded border-[#0079FF]":"" } ${theme=='dark'?'text-[#fff]':'text-[#000]'} pb-1 mb-2`}
+      >
+        Own Activity
       </button>
     </div>
   );

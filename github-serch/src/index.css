@@ -84,10 +84,35 @@ color: white;
 
 }
 
+.ellipsiss {
+    overflow: hidden;
+    /* white-space: nowrap; */
+    text-overflow:ellipsis;
+    width: 300px; /* Set a specific width to the container */
+    height: 60px;
+    border: 2px solid red;
+  }
+  
+
 
 
 @media screen and (max-width:520px) {
       .themeValue{
+        display: none;
+      }
+}
+@media screen and (max-width:1000px) {
+      .own-activity-avtar{
+        display: none;
+      }
+}
+@media screen and (max-width:768px) {
+      .own-activity-avtar{
+        display: block;
+      }
+}
+@media screen and (max-width:510px) {
+      .own-activity-avtar{
         display: none;
       }
 }
