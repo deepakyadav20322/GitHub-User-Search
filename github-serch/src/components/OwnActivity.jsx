@@ -2,7 +2,7 @@ import React,{useContext} from 'react'
 import { ThemeContext } from './context/ThemeChangeContext';
 
 const OwnActivity = ({data}) => {
-  console.log(data[0].public);
+  
 const {theme} = useContext(ThemeContext);
 const options = {
     year: 'numeric',
@@ -16,6 +16,7 @@ const options = {
    
   return (
     <>
+    {data.length>0?"":<p className={`w-[80vw] text-center mt-5 ${theme=='dark'?'text-[#8D93A2]':'text-black'} text-[19px]`}>No Activity available</p>}
      {  data?.map((user) => ( 
       <div key={user.id} className={`${theme=='dark'?'bg-gray-900':'bg-[#fff] text-[#000]'} p-3 leadincg-8`}>
         <div className='flex flex-row justify-between items-center'>
